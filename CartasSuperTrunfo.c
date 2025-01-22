@@ -17,6 +17,9 @@ int main()
     float area;
     float pib;
     int pontosTuristicos;
+    float densidadePopulacional;
+    float pibPerCapita;
+
 
     /*
         Aqui é a parte responsável pela solicitação dos dados e atribuição dos valores às variáveis!
@@ -41,11 +44,19 @@ int main()
     printf("Digite a área: \n");
     scanf("%f", &area);
 
-    printf("Digite o PIB: \n");
+    printf("Digite o PIB (em bilhões): \n");
     scanf("%f", &pib);
 
     printf("Digite o número de pontos turísticos: \n");
     scanf("%d", &pontosTuristicos);
+
+    /*
+        Aqui é a parte responsável pelo cáculo da densidade populacional e do PIB per capita!
+    */
+
+    densidadePopulacional = (float) populacao / area;
+    pibPerCapita = (float) pib / populacao;
+
 
     /*
         Aqui é a parte responsável pela exibição dos dados!
@@ -56,9 +67,11 @@ int main()
     printf("Estado: %c \n", estado);
     printf("Código da Carta: %s \n", codigo);
     printf("Nome da Cidade: %s \n", cidade);
-    printf("População: %d \n", populacao);
+    printf("População: %d habitantes \n", populacao);
     printf("Área: %.2f km² \n", area);
+    printf("Densidade Populacional: %.2f pessoas/km² \n", densidadePopulacional);
     printf("PIB: %.2f bilhões de reais \n", pib);
+    printf("PIB per Capita: R$%.2f por habitante \n", pibPerCapita);
     printf("Número de Pontos Turísticos: %d \n", pontosTuristicos);
 
     return 0;
